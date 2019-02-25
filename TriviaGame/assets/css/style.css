@@ -1,0 +1,235 @@
+  Jumbotron {
+    color: black;
+    background-color: rgba(248, 243, 85, 0);
+    opacity: .7;
+    margin-top: 50px;
+    margin-left: auto;
+    width: 55%;
+  }
+
+  html body div.container div.jumbotron {
+      background-color: red;
+      color: purple;
+      text-align: center;
+  }
+  
+
+  h1 {
+    font-size: 20px;
+    font-weight: 400;
+  }
+
+  .btn {
+    
+    width:275px;
+    padding:15px;
+    font-size: 20px;
+    color: purple;
+  
+  }
+  .main-button-container {
+    max-width: 450px;
+    margin-left: auto;
+    /* margin-right: auto; */
+  }
+
+  #mainArea {
+    margin-top:10px;
+    max-width: 50%;
+    margin-left: auto;
+    color: black;
+    font-size: 26px;
+    height: 500px;;
+  }
+  .timer-p {
+    margin-top: 50px;
+    font-size:24px;
+    background-color: white;
+    opacity: .7;
+  }
+  
+  p.text-center {
+    font-size:30px;
+    
+    
+  }
+  .answer:hover {
+    background: rgba(250, 240, 99, 0.99);
+  }
+
+  p {
+    font-size: 18px;
+    font-weight: 400;
+  }
+  .answer {
+    /* padding-top: 7px; */
+    height: 55px;
+    color: black;
+    padding: 15px;
+    background-color: white;
+    border-radius: 4px;
+    opacity: .7;
+
+  }
+
+  img {
+    margin-top: 30px;
+    width:70%;
+    border-radius: 25px;
+    
+  }
+  .img-wrong {
+    border-radius: 25px;
+    margin-top: 40px;
+    width:60%;
+    
+  }
+  
+  .first-answer {
+    margin-top: 40px;
+  }
+  
+  .reset-button {
+    margin-top: 40px;
+  }
+  
+  .summary-correct {
+    margin-top: 40px;
+  }
+  
+  body {
+    background-image: url("../images/95658.jpg");
+    background-repeat: no-repeat;
+    background-position: cover;
+    background-size: 100%;
+    color: white;
+    font-size: 20px;
+    font-family: 'Boogaloo', cursive;
+  }
+
+  /* // Extra small devices (portrait phones, less than 576px) */
+  @media (max-width: 575px) { 
+    .timer-p {
+      margin-top: 70px;
+      margin-bottom: 30px;
+    }
+    body {
+      background-image: url('../images/95658.jpg');
+      background-repeat: no-repeat;
+      background-size: auto;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 36px;
+      font-weight: 300;
+    }
+
+    p {
+      font-size: 18px;
+      font-weight: 300;
+    }
+
+    img, .img-wrong, .answer {
+      margin-top: 30px;
+      width:120%;
+      text-align: left;
+      /* border-radius: 5px; */
+      
+    }
+
+   .btn {
+      margin: auto;
+      width: 100%;
+      color: white;
+      text-align: center;
+      font-size: 20px;
+    }
+
+    .jumbotron, #mainArea, .main-button-container {
+      margin: auto;
+      width: 100%;
+      color: black;
+      text-align: center;
+      font-size: 20px;
+    }
+   }
+  
+  /* // Small devices (landscape phones, 576px and up) */
+  @media (min-width: 576px) and (max-width: 767px) {  
+  body {
+    background-image: url('../images/95658.jpg');
+    background-repeat: no-repeat;
+    background-size: auto;
+    text-align: center;
+  }
+
+  h1 {
+      font-size: 36px;
+      font-weight: 300;
+    }
+ 
+  p {
+      font-size: 18px;
+      font-weight: 300;
+    }
+
+  img, .img-wrong, .answer {
+    margin-top: 30px;
+    width:120%;
+    text-align: left;
+    /* border-radius: 5px; */
+    
+  }
+ .btn {
+    width:100%;
+  }
+  .jumbotron, #mainArea, .main-button-container {
+    margin: auto;
+    width: 100%;
+    color: black;
+    text-align: center;
+    font-size: 20px;
+
+  } 
+}
+  
+  /* // Medium devices (tablets, 768px and up) */
+  @media (min-width: 768px) and (max-width: 991px) {  
+  body {
+    background-image: url('../images/95658.jpg');
+    background-repeat: no-repeat;
+    background-size: auto;
+    text-align: center;
+  }
+
+  img, .img-wrong, .answer {
+    margin-top: 30px;
+    width:120%;
+    text-align: left;
+    /* border-radius: 5px; */
+    
+  }
+
+  h1 {
+    font-size: 36px;
+    font-weight: 300;
+  }
+
+  p {
+    font-size: 18px;
+    font-weight: 300;
+  }
+
+ .btn {
+    width:100%;
+  }
+  .jumbotron, #mainArea, .main-button-container {
+    margin: auto;
+    width: 100%;
+    color: black;
+    text-align: center;
+    font-size: 22px;
+
+  } 
+}
