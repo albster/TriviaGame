@@ -46,9 +46,9 @@ $(document).ready(function() {
     
     function timeoutLoss() {
         unansweredTally++;
-        gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>You ran out of time!  The correct answer was: " + correctAnswers[questionCounter] + "</p>" + "<img class='center-block img-wrong' src='TriviaGame/assets/images/xpng.gif'>";
+        gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>Baby, baby, baby, you're out of time!  The correct answer was: " + correctAnswers[questionCounter] + "</p>" + "<img class='center-block img-wrong' src='TriviaGame/assets/images/xpng.gif'>";
         $("#mainArea").html(gameHTML);
-        setTimeout(wait, 3000);  //  change to 4000 or other amount
+        setTimeout(wait, 4000);  //  change to 4000 or other amount
     }
     
     function generateWin() {
@@ -56,19 +56,19 @@ $(document).ready(function() {
         gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>Correct! The answer is: " + correctAnswers[questionCounter] + "</p>" + imageArray[questionCounter];
         $("#mainArea").html(gameHTML);
         
-        setTimeout(wait, 3000);  //end generatewin
+        setTimeout(wait, 4000);  //end generatewin
     }
     
     function generateLoss() {
         incorrectTally++;
-        gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>Wrong! The correct answer is: "+ correctAnswers[questionCounter] + "</p>" + "<img class='center-block img-wrong' src='TriviaGame/assets/images/x.gif'>";
+        gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>Wrong! The correct answer is: "+ correctAnswers[questionCounter] + "</p>" + "<img class='center-block img-wrong' src='TriviaGame/assets/images/bk.gif'>";
         $("#mainArea").html(gameHTML);
         setTimeout(wait, 3000); 
     }
     //end generate loss
 
     function generateQuestions() {
-        gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>30</span></p><p class='text-center'>" + questionArray[questionCounter] + "</p><p class='first-answer answer'>1. " + answerArray[questionCounter][0] + "</p><p class='answer'>2. "+answerArray[questionCounter][1]+"</p><p class='answer'>3. "+answerArray[questionCounter][2]+"</p><p class='answer'>4. "+answerArray[questionCounter][3]+"</p>";
+        gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>10</span></p><p class='text-center'>" + questionArray[questionCounter] + "</p><p class='first-answer answer'>1. " + answerArray[questionCounter][0] + "</p><p class='answer'>2. "+answerArray[questionCounter][1]+"</p><p class='answer'>3. "+answerArray[questionCounter][2]+"</p><p class='answer'>4. "+answerArray[questionCounter][3]+"</p>";
         $("#mainArea").html(gameHTML);
     }; //end generate question
     
@@ -77,15 +77,15 @@ $(document).ready(function() {
     questionCounter < 7 ? 
         (questionCounter++,
         generateQuestions(),
-        counter = 30,
+        counter = 10,
         timerWrapper() ):
         
        (finalScreen())
     }; //end function
     
     function timerWrapper() {
-        theClock = setInterval(thirtySeconds, 1000);
-        function thirtySeconds() {
+        theClock = setInterval(tenSeconds, 1000);
+        function tenSeconds() {
             if (counter === 0) {
                 clearInterval(theClock);
                 timeoutLoss();
@@ -107,20 +107,20 @@ $(document).ready(function() {
         correctTally = 0;
         incorrectTally = 0;
         unansweredTally = 0;
-        counter = 30;
+        counter = 10;
         generateQuestions();
         timerWrapper();
     }
     
     var openScreen;
     var gameHTML;
-    var counter = 30;
+    var counter = 10;
     var questionArray = 
     [ "What member of The Beatles, was thought to have died on Nov.9th 1966?", 
     "What fashion model was dubbed 'The Face of 1966'?", 
     "What actress died on Aug.6th 1962?", 
     "What bands, front man was arrested on stage in Dec.9th 1967?",
-    "What couple appeared naked on their own LP?", 
+    "In what Italian film directed Mario Brava starring John Phillip Law & Marisa Mell, was released in Italy in January 1968 but not in the US till December of 1968?", 
     "In what year did Ken Kesey and 13 Merry Pranksters drive across the USA on a Psychedelic trip to The Worlds Fair in NYC?", 
     "What artist said 'Take me, I am the drug; take me, I am hallucinogenic'?", 
     "What year was the book 'One flew over the cukoo's nest released'?" ];
@@ -129,8 +129,8 @@ $(document).ready(function() {
         ["Johmn Lennon", "George Harrison", "Paul McCartny", "Ringo Starr"], 
         ["Sophia Louren","Peggy Moffit","Twiggy","Bridgette Bardot"], 
         ["Jane Mansfeild", "Marilyn Monroe", "Diana Barrymore", "Jane Fonda"], 
-        ["Hawkwind", "The Doors", "Deep Purple", "Black Sabboth"], 
-        ["Paul & Linda", "John & Yoko", "Sonny & Cher", "Ike and Tina"], 
+        ["Rolling Stones", "The Doors", "Deep Purple", "Black Sabboth"], 
+        ["Blow Up", "Danger: Diabolik", "Girl on a motorcycle", "She killed in ecstasy"], 
         ["1969","1966","1964","1968"], 
         ["Andy Warhol", "Jasper Johns", "Salvidor Dali", "Picasso"], 
         ["1962","1969","1965","1968"], ];
@@ -140,7 +140,7 @@ $(document).ready(function() {
     imageArray[1] = "<img class='center-block' src='TriviaGame/assets/images/twiggy.gif'>"; 
     imageArray[2] = "<img class='center-block' src='TriviaGame/assets/images/marilyn.gif'>"; 
     imageArray[3] = "<img class='center-block' src='TriviaGame/assets/images/morrison.gif'>";  
-    imageArray[4] = "<img class='center-block' src='TriviaGame/assets/images/john&yoko.gif'>"; 
+    imageArray[4] = "<img class='center-block' src='TriviaGame/assets/images/dd.jpg'>"; 
     imageArray[5] = "<img class='center-block' src='TriviaGame/assets/images/further.jpg'>"; 
     imageArray[6] = "<img class='center-block' src='TriviaGame/assets/images/dali.gif'>"; 
     imageArray[7] = "<img class='center-block' src='TriviaGame/assets/images/cuckoo.jpg'>"; 
@@ -150,7 +150,7 @@ $(document).ready(function() {
     "3. Twiggy", 
     "2. Marilyn Monroe", 
     "2. The Doors", 
-    "2. John & Yoko", 
+    "2. Danger: Diabolik", 
     "3. 1964", 
     "3. Salvidor Dali", 
     "1. 1962"];
