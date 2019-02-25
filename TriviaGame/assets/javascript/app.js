@@ -46,7 +46,7 @@ $(document).ready(function() {
     
     function timeoutLoss() {
         unansweredTally++;
-        gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>You ran out of time!  The correct answer was: " + correctAnswers[questionCounter] + "</p>" + "<img class='center-block img-wrong' src='/assets/images/x.gif'>";
+        gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>You ran out of time!  The correct answer was: " + correctAnswers[questionCounter] + "</p>" + "<img class='center-block img-wrong' src='TriviaGame/assets/images/xpng.gif'>";
         $("#mainArea").html(gameHTML);
         setTimeout(wait, 3000);  //  change to 4000 or other amount
     }
@@ -61,14 +61,14 @@ $(document).ready(function() {
     
     function generateLoss() {
         incorrectTally++;
-        gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>Wrong! The correct answer is: "+ correctAnswers[questionCounter] + "</p>" + "<img class='center-block img-wrong' src='/assets/images/x.gif'>";
+        gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>Wrong! The correct answer is: "+ correctAnswers[questionCounter] + "</p>" + "<img class='center-block img-wrong' src='TriviaGame/assets/images/x.gif'>";
         $("#mainArea").html(gameHTML);
         setTimeout(wait, 3000); 
     }
     //end generate loss
 
     function generateQuestions() {
-        gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>30</span></p><p class='text-center'>" + questionArray[questionCounter] + "</p><p class='first-answer answer'>A. " + answerArray[questionCounter][0] + "</p><p class='answer'>B. "+answerArray[questionCounter][1]+"</p><p class='answer'>C. "+answerArray[questionCounter][2]+"</p><p class='answer'>D. "+answerArray[questionCounter][3]+"</p>";
+        gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>30</span></p><p class='text-center'>" + questionArray[questionCounter] + "</p><p class='first-answer answer'>1. " + answerArray[questionCounter][0] + "</p><p class='answer'>2. "+answerArray[questionCounter][1]+"</p><p class='answer'>3. "+answerArray[questionCounter][2]+"</p><p class='answer'>4. "+answerArray[questionCounter][3]+"</p>";
         $("#mainArea").html(gameHTML);
     }; //end generate question
     
@@ -136,24 +136,24 @@ $(document).ready(function() {
         ["1962","1969","1965","1968"], ];
 
     var imageArray = new Array();  
-    imageArray[0] = "<img class='center-block' src='../assets/images/faul.jpg'>";
-    imageArray[1] = "<img class='center-block' src='/assets/images/twiggy.jpg'>"; 
-    imageArray[2] = "<img class='center-block' src='/assets/images/marilyn.jpg'>"; 
-    imageArray[3] = "<img class='center-block' src='/assets/images/jim.jpg'>";  
-    imageArray[4] = "<img class='center-block' src='/assets/images/john&yoko.png'>"; 
-    imageArray[5] = "<img class='center-block' src='/assets/images/further.jpg'>"; 
-    imageArray[6] = "<img class='center-block' src='/assets/images/dali.jpg'>"; 
-    imageArray[7] = "<img class='center-block' src='/assets/images/cuckoo.jpg'>"; 
+    imageArray[0] = "<img class='center-block' src='TriviaGame/assets/images/faul.gif'>";
+    imageArray[1] = "<img class='center-block' src='TriviaGame/assets/images/twiggy.gif'>"; 
+    imageArray[2] = "<img class='center-block' src='TriviaGame/assets/images/marilyn.gif'>"; 
+    imageArray[3] = "<img class='center-block' src='TriviaGame/assets/images/morrison.gif'>";  
+    imageArray[4] = "<img class='center-block' src='TriviaGame/assets/images/john&yoko.gif'>"; 
+    imageArray[5] = "<img class='center-block' src='TriviaGame/assets/images/further.jpg'>"; 
+    imageArray[6] = "<img class='center-block' src='TriviaGame/assets/images/dali.gif'>"; 
+    imageArray[7] = "<img class='center-block' src='TriviaGame/assets/images/cuckoo.jpg'>"; 
 
     var correctAnswers = 
-    [ "C. Paul McCartny", 
-    "C. Twiggy", 
-    "B. Marilyn Monroe", 
-    "B. The Doors", 
-    "B. John & Yoko", 
-    "C. 1964", 
-    "C. Salvidor Dali", 
-    "A. 1962"];
+    [ "3. Paul McCartny", 
+    "3. Twiggy", 
+    "2. Marilyn Monroe", 
+    "2. The Doors", 
+    "2. John & Yoko", 
+    "3. 1964", 
+    "3. Salvidor Dali", 
+    "1. 1962"];
 
     var questionCounter = 0;
     var selecterAnswer;
@@ -161,4 +161,4 @@ $(document).ready(function() {
     var correctTally = 0;
     var incorrectTally = 0;
     var unansweredTally = 0;
-var clickSound = new Audio("assets/sounds/click-sound.mp3");
+var clickSound = new Audio("TriviaGame/assets/sounds/click-sound.mp3");
