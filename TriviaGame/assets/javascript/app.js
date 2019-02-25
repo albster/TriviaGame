@@ -61,9 +61,9 @@ $(document).ready(function() {
     
     function generateLoss() {
         incorrectTally++;
-        gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>Wrong! The correct answer is: "+ correctAnswers[questionCounter] + "</p>" + "<img class='center-block img-wrong' src='TriviaGame/assets/images/bk.gif'>";
+        gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>Wrong! The correct answer is: "+ correctAnswers[questionCounter] + "</p>" + "<img class='center-block img-wrong' src='TriviaGame/assets/images/psych.gif'>";
         $("#mainArea").html(gameHTML);
-        setTimeout(wait, 3000); 
+        setTimeout(wait, 4000); 
     }
     //end generate loss
 
