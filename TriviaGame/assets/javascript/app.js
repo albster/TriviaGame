@@ -27,11 +27,11 @@ $(document).ready(function() {
         selectedAnswer = $(this).text();
         
         selectedAnswer === correctAnswers[questionCounter] ? (
-            //alert("correct");
+            //alert = win
             clearInterval(theClock),
             generateWin()) :
             //else
-            (//alert("wrong answer!");
+            (//alert = lose
             clearInterval(theClock),
             generateLoss()
         )
@@ -40,6 +40,7 @@ $(document).ready(function() {
     $("body").on("click", ".reset-button", function(event){
         clickSound.play();
         resetGame();
+
     }); // ends reset-button click
     
     });  //  Ends jQuery wrapper
@@ -56,24 +57,24 @@ $(document).ready(function() {
         gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>! The answer is: " + correctAnswers[questionCounter] + "</p>" + imageArray[questionCounter];
         $("#mainArea").html(gameHTML);
         
-        setTimeout(wait, 4000);  //end generatewin
+        setTimeout(wait, 4000);  
     }
     
     function generateLoss() {
         incorrectTally++;
         gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>Wrong! The correct answer is: "+ correctAnswers[questionCounter] + "</p>" + "<img class='center-block img-wrong' src='TriviaGame/assets/images/bk.gif'>";
         $("#mainArea").html(gameHTML);
-        setTimeout(wait, 4000); 
+        setTimeout(wait, 2500); 
     }
-    //end generate loss
+   
 
     function generateQuestions() {
         gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>15</span></p><p class='text-center'>" + questionArray[questionCounter] + "</p><p class='first-answer answer'>1. " + answerArray[questionCounter][0] + "</p><p class='answer'>2. "+answerArray[questionCounter][1]+"</p><p class='answer'>3. "+answerArray[questionCounter][2]+"</p><p class='answer'>4. "+answerArray[questionCounter][3]+"</p>";
         $("#mainArea").html(gameHTML);
-    }; //end generate question
+    }; 
     
     function wait() {
-        //ternary operator replacing if/else for generate more questions
+        //ternary operator replacing if/else for generate more questions, found this solution to for shorter code.
     questionCounter < 7 ? 
         (questionCounter++,
         generateQuestions(),
