@@ -85,8 +85,8 @@ $(document).ready(function() {
     }; //end function
     
     function timerWrapper() {
-        theClock = setInterval(tenSeconds, 1000);
-        function tenSeconds() {
+        theClock = setInterval(fifteenSeconds, 1000);
+        function fifteenSeconds() {
             if (counter === 0) {
                 clearInterval(theClock);
                 timeoutLoss();
