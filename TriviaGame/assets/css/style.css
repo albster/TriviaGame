@@ -1,11 +1,4 @@
-  Jumbotron {
-    color: black;
-    background-color: rgba(248, 243, 85, 0);
-    opacity: .7;
-    margin-top: 50px;
-    margin-left: auto;
-    width: 55%;
-  }
+  
 
   html body div.container div.jumbotron {
       background-color: red;
@@ -30,7 +23,7 @@
   .main-button-container {
     max-width: 450px;
     margin-left: auto;
-    /* margin-right: auto; */
+   
   }
 
   #mainArea {
@@ -56,7 +49,7 @@
     
   }
   .answer:hover {
-    background: rgba(250, 240, 99, 0.99);
+    background: pink;
   }
 
   p {
@@ -64,7 +57,7 @@
     font-weight: 400;
   }
   .answer {
-    /* padding-top: 7px; */
+   
     height: 55px;
     color: black;
     padding: 15px;
@@ -136,7 +129,7 @@
       margin-top: 30px;
       width:120%;
       text-align: left;
-      /* border-radius: 5px; */
+     
       
     }
 
@@ -157,7 +150,7 @@
     }
    }
   
-  /* // Small devices (landscape phones, 576px and up) */
+  /* // Small screens 576px and up) */
   @media (min-width: 576px) and (max-width: 767px) {  
   body {
     background-image: url('../images/95658.jpg');
@@ -180,7 +173,7 @@
     margin-top: 30px;
     width:120%;
     text-align: left;
-    /* border-radius: 5px; */
+    
     
   }
  .btn {
@@ -196,7 +189,7 @@
   } 
 }
   
-  /* // Medium devices (tablets, 768px and up) */
+  /* // Tablets, 768px and up) */
   @media (min-width: 768px) and (max-width: 991px) {  
   body {
     background-image: url('../images/95658.jpg');
@@ -209,7 +202,7 @@
     margin-top: 30px;
     width:120%;
     text-align: left;
-    /* border-radius: 5px; */
+   
     
   }
 

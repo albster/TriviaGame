@@ -1,17 +1,17 @@
 $(document).ready(function() {
-    // Create a function that creates the start button and initial screen
+    // function creates start button and initial screen
     
     function openingPage() {
-        openScreen = "<p class='text-center main-button-container'><a class='btn btn-warning btn-md btn-block start-button' href='#' role='button'>Take The Trip</a></p>";
+        openScreen = "<p class='text-center main-button-container'><a class='btn btn-warning btn-md btn-block start-button' href='#' role='button'>Yes!</a></p>";
         $("#mainArea").append(openScreen);
     }
     
     openingPage();
     
-    //on-click event for start button to begin name
+    //on-click event for start button start name
     
     $("#mainArea").on("click", ".start-button", function(event){
-        event.preventDefault();  // added line to test issue on GitHub Viewer
+        event.preventDefault();  
         clickSound.play();
         $('.jumbotron').hide();
             
@@ -25,7 +25,7 @@ $(document).ready(function() {
         
         clickSound.play();
         selectedAnswer = $(this).text();
-        //ternary operator, if/else replacement
+        
         selectedAnswer === correctAnswers[questionCounter] ? (
             //alert("correct");
             clearInterval(theClock),
@@ -35,25 +35,25 @@ $(document).ready(function() {
             clearInterval(theClock),
             generateLoss()
         )
-    }); // Close .answer click
+    }); // ends .answer click
     
     $("body").on("click", ".reset-button", function(event){
         clickSound.play();
         resetGame();
-    }); // Closes reset-button click
+    }); // ends reset-button click
     
-    });  //  Closes jQuery wrapper
+    });  //  Ends jQuery wrapper
     
     function timeoutLoss() {
         unansweredTally++;
-        gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>Baby, baby, baby, you're out of time!  The correct answer was: " + correctAnswers[questionCounter] + "</p>" + "<img class='center-block img-wrong' src='TriviaGame/assets/images/xpng.gif'>";
+        gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>Baby, you're out of time!  The correct answer was: " + correctAnswers[questionCounter] + "</p>" + "<img class='center-block img-wrong' src='TriviaGame/assets/images/xpng.gif'>";
         $("#mainArea").html(gameHTML);
-        setTimeout(wait, 4000);  //  change to 4000 or other amount
+        setTimeout(wait, 4000); 
     }
     
     function generateWin() {
         correctTally++;
-        gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>Correct! The answer is: " + correctAnswers[questionCounter] + "</p>" + imageArray[questionCounter];
+        gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>! The answer is: " + correctAnswers[questionCounter] + "</p>" + imageArray[questionCounter];
         $("#mainArea").html(gameHTML);
         
         setTimeout(wait, 4000);  //end generatewin
@@ -61,14 +61,14 @@ $(document).ready(function() {
     
     function generateLoss() {
         incorrectTally++;
-        gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>Wrong! The correct answer is: "+ correctAnswers[questionCounter] + "</p>" + "<img class='center-block img-wrong' src='TriviaGame/assets/images/psych.gif'>";
+        gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>Wrong! The correct answer is: "+ correctAnswers[questionCounter] + "</p>" + "<img class='center-block img-wrong' src='TriviaGame/assets/images/bk.gif'>";
         $("#mainArea").html(gameHTML);
         setTimeout(wait, 4000); 
     }
     //end generate loss
 
     function generateQuestions() {
-        gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>10</span></p><p class='text-center'>" + questionArray[questionCounter] + "</p><p class='first-answer answer'>1. " + answerArray[questionCounter][0] + "</p><p class='answer'>2. "+answerArray[questionCounter][1]+"</p><p class='answer'>3. "+answerArray[questionCounter][2]+"</p><p class='answer'>4. "+answerArray[questionCounter][3]+"</p>";
+        gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>15</span></p><p class='text-center'>" + questionArray[questionCounter] + "</p><p class='first-answer answer'>1. " + answerArray[questionCounter][0] + "</p><p class='answer'>2. "+answerArray[questionCounter][1]+"</p><p class='answer'>3. "+answerArray[questionCounter][2]+"</p><p class='answer'>4. "+answerArray[questionCounter][3]+"</p>";
         $("#mainArea").html(gameHTML);
     }; //end generate question
     
@@ -77,7 +77,7 @@ $(document).ready(function() {
     questionCounter < 7 ? 
         (questionCounter++,
         generateQuestions(),
-        counter = 10,
+        counter = 15,
         timerWrapper() ):
         
        (finalScreen())
@@ -107,26 +107,26 @@ $(document).ready(function() {
         correctTally = 0;
         incorrectTally = 0;
         unansweredTally = 0;
-        counter = 10;
+        counter = 15;
         generateQuestions();
         timerWrapper();
     }
     
     var openScreen;
     var gameHTML;
-    var counter = 10;
+    var counter = 15;
     var questionArray = 
     [ "What member of The Beatles, was thought to have died on Nov.9th 1966?", 
     "What fashion model was dubbed 'The Face of 1966'?", 
     "What actress died on Aug.6th 1962?", 
     "What bands, front man was arrested on stage in Dec.9th 1967?",
-    "In what Italian film directed Mario Brava starring John Phillip Law & Marisa Mell, was released in Italy in January 1968 but not in the US till December of 1968?", 
+    "What Italian film directed Mario Brava, was released in Italy in January 1968 but not in the US till December of 1968?", 
     "In what year did Ken Kesey and 13 Merry Pranksters drive across the USA on a Psychedelic trip to The Worlds Fair in NYC?", 
     "What artist said 'Take me, I am the drug; take me, I am hallucinogenic'?", 
     "What year was the book 'One flew over the cukoo's nest released'?" ];
 
     var answerArray = [
-        ["Johmn Lennon", "George Harrison", "Paul McCartny", "Ringo Starr"], 
+        ["John Lennon", "George Harrison", "Paul McCartny", "Ringo Starr"], 
         ["Sophia Louren","Peggy Moffit","Twiggy","Bridgette Bardot"], 
         ["Jane Mansfeild", "Marilyn Monroe", "Diana Barrymore", "Jane Fonda"], 
         ["Rolling Stones", "The Doors", "Deep Purple", "Black Sabboth"], 
