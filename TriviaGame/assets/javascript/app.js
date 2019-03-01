@@ -8,7 +8,7 @@ $(document).ready(function() {
     
     openingPage();
     
-    //on-click event for start button start name
+    //on-click event for start button start game
     
     $("#mainArea").on("click", ".start-button", function(event){
         event.preventDefault();  
@@ -54,7 +54,7 @@ $(document).ready(function() {
     
     function generateWin() {
         correctTally++;
-        gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>! The answer is: " + correctAnswers[questionCounter] + "</p>" + imageArray[questionCounter];
+        gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>You're right! The answer is: " + correctAnswers[questionCounter] + "</p>" + imageArray[questionCounter];
         $("#mainArea").html(gameHTML);
         
         setTimeout(wait, 4000);  
@@ -99,7 +99,7 @@ $(document).ready(function() {
     }
     
     function finalScreen() {
-        gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>All done, here's how you did!" + "</p>" + "<p class='summary-correct'>Correct Answers: " + correctTally + "</p>" + "<p>Wrong Answers: " + incorrectTally + "</p>" + "<p>Unanswered: " + unansweredTally + "</p>" + "<p class='text-center reset-button-container'><a class='btn btn-warning btn-md btn-block reset-button' href='#' role='button'>Reset The Quiz!</a></p>";
+        gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>End of game, wonder how you did?" + "</p>" + "<p class='summary-correct'>Answers you got right: " + correctTally + "</p>" + "<p>Answers you got wrong: " + incorrectTally + "</p>" + "<p>Unanswered: " + unansweredTally + "</p>" + "<p class='text-center reset-button-container'><a class='btn btn-warning btn-md btn-block reset-button' href='#' role='button'>Reset The Quiz!</a></p>";
         $("#mainArea").html(gameHTML);
     }
     
