@@ -120,7 +120,7 @@ $(document).ready(function() {
     [ "What member of The Beatles, was thought to have died on Nov.9th 1966?", 
     "What fashion model was dubbed 'The Face of 1966'?", 
     "What actress died on Aug.6th 1962?", 
-    "What bands, front man was arrested on stage in Dec.9th 1967?",
+    "What bands front man was arrested on stage in Dec.9th 1967?",
     "What Italian film directed Mario Brava, was released in Italy in January 1968 but not in the US till December of 1968?", 
     "In what year did Ken Kesey and 13 Merry Pranksters drive across the USA on a Psychedelic trip to The Worlds Fair in NYC?", 
     "What artist said 'Take me, I am the drug; take me, I am hallucinogenic'?", 
